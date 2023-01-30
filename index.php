@@ -39,7 +39,7 @@
         ],
 
     ];
-
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -51,6 +51,37 @@
         <title>Hotel</title>
     </head>
     <body>
-        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Parking</th>
+                    <th scope="col">Vote</th>
+                    <th scope="col">Distance to center</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach($hotels as $hotel){ ?>
+                    <tr>
+                        <?php foreach($hotel as $key => $item){ ?>
+                        <td>
+                            <?php if($key == 'parking'){
+                                if($item == true){
+                                    echo 'Si';
+                                }
+                                else{
+                                    echo 'No';
+                                }
+                            }
+                            else{
+                                echo $item;
+                            } ?>
+                        </td>
+                        <?php } ?>
+                    </tr>
+                <?php } ?>
+            </tbody>
+        </table>
     </body>
 </html>
