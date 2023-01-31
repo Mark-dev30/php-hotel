@@ -39,7 +39,6 @@
         ],
 
     ];
-    $value = $_POST['value'];
     $SameHotels = $hotels;
     if(isset($_GET['value']) && $_GET['value'] !== ''){
 
@@ -70,7 +69,7 @@
             <h4>FILTER YOUR SEARCH</h4>
             </div>
             <div class="col-6">
-                <form action="index.php">
+                <form action="index.php" method="GET">
                     <div class="input-group mb-3" style="width: 80%;">
                         <select class="form-select" id="inputGroupSelect01" name="value">
                             <option selected>Choose Hotel Rating</option>
